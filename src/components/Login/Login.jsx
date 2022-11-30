@@ -20,8 +20,7 @@ const Login = () => {
   // }, [login])
   return (
     <div className="container">
-      <h1>Login</h1>
-      <Form
+      <Form className="form-container"
         name="basic"
         labelCol={{
           span: 8,
@@ -36,7 +35,7 @@ const Login = () => {
         autoComplete="off"
       >
         <Form.Item
-          label="Email"
+          label ="Email"
           name="email"
           rules={[
             {
@@ -50,7 +49,7 @@ const Login = () => {
         </Form.Item>
 
         <Form.Item
-          label="Password"
+          label = "Password"
           name="password"
           rules={[
             {
@@ -63,13 +62,10 @@ const Login = () => {
         </Form.Item>
 
         <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
+          
         >
-          <Button type="primary" htmlType="submit">
-            Submit
+          <Button className="send-btn" type="primary" htmlType="submit">
+            Login
           </Button>
         </Form.Item>
       </Form>
