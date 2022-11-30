@@ -134,7 +134,7 @@ export const Register = () => {
             <button className="send-btn" type="submit" disabled={btnDisabled}>
               Register
             </button>
-            <input type="reset">Reset</input>
+            <input className="reset-btn" type="reset">Reset</input>
           </form>
           <p>{visible ? message : 'Redirecting to Home...'}</p>
         </div>
