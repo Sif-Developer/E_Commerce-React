@@ -12,3 +12,17 @@
     align-items: center;
     padding: 10px;
 }
+
+.ant-modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#myform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
