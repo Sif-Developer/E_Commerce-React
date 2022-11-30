@@ -7,10 +7,15 @@ import {
     LogoutOutlined,
   } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-
+import "./Header.css"
 
 const Header = () =>{
     return(
+        <header>
+        <h1 className="header">
+            HEADER
+        </h1>
+        <nav>
         <Menu mode="horizontal" defaultSelectedKeys={["home"]}>
         <Menu.Item key="home" icon={<HomeOutlined />}>
           <Link to="/">Home</Link>
@@ -26,8 +31,9 @@ const Header = () =>{
           <Menu.Item key="login" icon={<UserAddOutlined />}>
             <Link to="/login">Login</Link>
           </Menu.Item>
-        
-      </Menu>
+        </Menu>
+        </nav>
+        </header>
     )
 }
 
