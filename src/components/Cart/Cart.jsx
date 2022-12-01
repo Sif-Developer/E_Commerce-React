@@ -6,6 +6,12 @@ const Cart = () => {
 
     const { cart } = useContext(ProductsContext);
 
+    useEffect(() => {
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+    }, [cart]);
+
     if (cart.length <= 0) {
 
         return <span>You need atleast one product</span>;
@@ -33,6 +39,7 @@ const Cart = () => {
         <div>
 
             {cartItem}
+            <button onClick={() => clearCart()}>Clear cart</button>
 
         </div>
 

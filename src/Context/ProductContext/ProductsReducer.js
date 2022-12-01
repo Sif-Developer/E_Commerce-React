@@ -22,6 +22,16 @@ const products = (state, action) => {
 
             };
 
+        case "CLEAR_CART":
+
+            return {
+
+                ...state,
+
+                cart: [],
+
+            };
+
         default:
 
             return state;

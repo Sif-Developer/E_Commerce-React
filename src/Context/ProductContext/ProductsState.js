@@ -5,7 +5,7 @@ import ProductsReducer from "./ProductsReducer";
 const initialState = {
 
     products: [],
-    cart: [],
+    cart: cart ? cart : [],
 
 };
 
@@ -45,6 +45,16 @@ export const ProductsProvider = ({ children }) => {
 
     };
 
+    const clearCart = () => {
+
+        dispatch({
+
+            type: "CLEAR_CART",
+
+        });
+
+    };
+
     return (
 
         <ProductsContext.Provider
@@ -53,7 +63,8 @@ export const ProductsProvider = ({ children }) => {
                 products: state.products,
                 cart: state.cart,
                 getProducts,
-                addCart
+                addCart,
+                clearCart
 
             }}
 
