@@ -1,0 +1,22 @@
+
+.loginBtn{
+    display: flex;
+    justify-content: right;
+    padding-top: 2em;
+    padding-right: 3em;
+    
+}
+
+header {
+    background-image: url("../../assets/images/prueba.jpg");
+    background-size: cover;
+    height: 30vh;
+    position:relative
+}
+
+nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: black;
+}

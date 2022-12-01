@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const { login } = useContext(UserContext);
   const navigate = useNavigate();
+
   const onFinish = (values) => {
     login(values);
   };
@@ -30,13 +31,13 @@ const Login = () => {
     setOpen(false);
   };
 
-  useEffect(() => {
-    const foundToken = JSON.parse(localStorage.getItem("token"));
-    if (foundToken) {
-      navigate("/profile")
-    }
+  // useEffect(() => {
+  //   const foundToken = JSON.parse(localStorage.getItem("token"));
+  //   if (foundToken) {
+  //     navigate("/profile")
+  //   }
 
-  }, [login])
+  // }, [login])
 
 
   return (
