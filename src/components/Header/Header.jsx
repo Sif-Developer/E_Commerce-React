@@ -17,7 +17,7 @@ const Header = () => {
         </div>
       
       <nav>
-        <Menu mode="horizontal" defaultSelectedKeys={["home"]}>
+        <Menu  mode="horizontal" defaultSelectedKeys={["home"]}>
           <Menu.Item key="home" icon={<HomeOutlined />}>
             <Link to="/">Home</Link>
           </Menu.Item>
