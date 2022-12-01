@@ -5,6 +5,7 @@ import ProductsReducer from "./ProductsReducer";
 const initialState = {
 
     products: [],
+    cart: [],
 
 };
 
@@ -32,15 +33,27 @@ export const ProductsProvider = ({ children }) => {
 
     };
 
+    const addCart = (product) => {
+
+        dispatch({
+
+            type: "ADD_CART",
+
+            payload: product,
+
+        });
+
+    };
+
     return (
 
         <ProductsContext.Provider
 
             value={{
-
                 products: state.products,
-
-                getProducts
+                cart: state.cart,
+                getProducts,
+                addCart
 
             }}
 

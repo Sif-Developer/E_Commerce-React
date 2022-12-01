@@ -12,6 +12,16 @@ const products = (state, action) => {
 
             };
 
+        case "ADD_CART":
+
+            return {
+
+                ...state,
+
+                cart: [action.payload, ...state.cart],
+
+            };
+
         default:
 
             return state;
