@@ -7,3 +7,10 @@
     height: 5vw;
 }
 
+.loginBtn{
+    display: flex;
+    justify-content: right;
+    padding-top: 2em;
+    padding-right: 3em;
+    
+}
