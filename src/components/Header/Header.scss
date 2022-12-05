@@ -2,13 +2,12 @@
 .loginBtn{
     display: flex;
     justify-content: right;
-    padding-top: 2em;
-    padding-right: 3em;
+   
     
 }
 
 header {
-    background-image: url("../../assets/images/prueba.jpg");
+    background-color: black;
     background-size: cover;
     height: 30vh;
     position:relative
@@ -19,4 +18,6 @@ nav {
     bottom: 0;
     width: 100%;
     color: black;
+    border: solid black;
+    
 }

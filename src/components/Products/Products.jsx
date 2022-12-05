@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "../../Context/ProductContext/ProductsState";
+import "./Products.scss";
+import undefined from "../../assets/images/undefined.jpg"
 
 
 const Products = () => {
@@ -22,11 +24,15 @@ const Products = () => {
 
         return (
 
-            <div key={product._id}>
+            <div className="product-box" key={product.id}>
 
                 <span>{product.name} </span>
 
-                <span>{product.price.toFixed(2)}</span>
+                <span>{product.price.toFixed(2)} €</span>
+
+                <span>{product.description}</span>
+
+                <img src={undefined} className="productimg" alt="news"></img>
 
                 <button onClick={() => addCart(product)}>Add Cart</button>
 
@@ -36,7 +42,7 @@ const Products = () => {
 
     });
 
-    return <div>{product}</div>;
+    return <div className="product-container">{product}</div>;
 
 };
 
