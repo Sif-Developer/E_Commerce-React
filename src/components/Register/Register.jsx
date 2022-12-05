@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Button, Modal, Form, Input } from "antd";
 
 const Register = () => {
@@ -10,11 +10,6 @@ const Register = () => {
     setIsModalOpen(true);
   };
 
-  // Oculta el modal al hacer click en "OK"
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
   // Oculta el modal al hacer click en "Cancel"
   const handleCancel = () => {
     setIsModalOpen(false);
@@ -23,7 +18,7 @@ const Register = () => {
   // Función que se ejecuta cuando se hace submit del formulario
   const onFinish = (values) => {
     console.log("Success:", values);
-    //Esto sirve para que cuando le acabe el formulario (si no hay errores) se cierre automáticamente
+    //Esto sirve para que cuando se envíe el formulario (si no hay errores), se cierre automáticamente
     setIsModalOpen(false);
   };
 
@@ -31,6 +26,9 @@ const Register = () => {
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+
+  //Hace referencia al componente For ... Esto servirá para poder vacíar el formulario
+  const formRef = useRef();
 
   return (
     <>
@@ -41,10 +39,10 @@ const Register = () => {
 
       {/* Modal que contiene el formulario */}
       <Modal
-        title="Modal Register"
+        title="Register"
         open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}>
+        onCancel={handleCancel}
+        footer={null}>
         <Form
           name="basic"
           labelCol={{ span: 8 }}
@@ -52,7 +50,11 @@ const Register = () => {
           initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
-          autoComplete="off">
+          autoComplete="off"
+          ref={formRef}
+          >
+
+
           {/* Campo de name */}
           <Form.Item
             label="Name"
@@ -127,6 +129,10 @@ const Register = () => {
             <Button type="primary" htmlType="submit">
               Submit
             </Button>
+            <Button type="primary" htmlType="button" onClick={()=> formRef.current.resetFields()}>
+              Reset
+            </Button>
+          
           </Form.Item>
         </Form>
       </Modal>
