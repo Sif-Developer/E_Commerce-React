@@ -2,6 +2,8 @@ import React from 'react'
 import { Carousel } from 'antd';
 import "./Home.scss";
 import home1 from "../../assets/images/home1.jpg"
+import games from "../../assets/images/games.png"
+import console from "../../assets/images/consolashome.jpg"
 
 
 function Home() {
@@ -13,21 +15,24 @@ function Home() {
   };
 
   return (
-    
+
+    <div className='Home'>
+
       <Carousel autoplay>
         <div>
-          <h3 style={contentStyle}><img src={home1} className="productimg" alt="news"></img></h3>
+          <h3 style={contentStyle}><img src={home1} className="producthome" alt="console"></img></h3>
         </div>
         <div>
-          <h3 style={contentStyle}>2</h3>
+          <h3 style={contentStyle}><img src={games} className="producthome" alt="games"></img></h3>
         </div>
         <div>
-          <h3 style={contentStyle}>3</h3>
+          <h3 style={contentStyle}><img src={console} className="producthome" alt="games"></img></h3>
         </div>
         <div>
           <h3 style={contentStyle}>4</h3>
         </div>
       </Carousel>
+      </div>
     )
   
 }
