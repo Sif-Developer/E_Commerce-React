@@ -26,13 +26,13 @@ const Products = () => {
 
             <div className="product-box" key={product.id}>
 
-                <span>{product.name} </span>
-
-                <span>{product.price.toFixed(2)} €</span>
-
-                <span>{product.description}</span>
+                <h3>{product.name}</h3>
 
                 <img src={undefined} className="productimg" alt="news"></img>
+
+                <span> Price: {product.price.toFixed(2)} €</span>
+
+                <span>{product.description}</span>
 
                 <button onClick={() => addCart(product)}>Add Cart</button>
 
