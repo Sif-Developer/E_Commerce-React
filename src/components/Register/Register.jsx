@@ -24,13 +24,14 @@ const Register = () => {
   const onFinish = (values) => {
     console.log("Success:", values);
     //Esto sirve para que cuando le acabe el formulario (si no hay errores) se cierre automáticamente
-    setIsModalOpen(false)
+    setIsModalOpen(false);
   };
 
   // Función que se ejecuta si falla el submit del formulario
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+
   return (
     <>
       {/* Botón que muestra el modal al hacer click en él */}
@@ -52,12 +53,14 @@ const Register = () => {
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
           autoComplete="off">
-
           {/* Campo de name */}
           <Form.Item
             label="Name"
             name="name"
-            rules={[{ required: true, message: "Please type your name!" }]}>
+            rules={[
+              { required: true, message: "Please type your name!" },
+              { type: "text", message: "Please enter a valid name" },
+            ]}>
             <Input />
           </Form.Item>
 
@@ -65,7 +68,10 @@ const Register = () => {
           <Form.Item
             label="Email"
             name="email"
-            rules={[{ required: true, message: "Please type your email!" }]}>
+            rules={[
+              { required: true, message: "Please type your email!" },
+              { type: "email", message: "Please enter a valid email " },
+            ]}>
             <Input />
           </Form.Item>
 
@@ -73,7 +79,10 @@ const Register = () => {
           <Form.Item
             label="Password"
             name="password"
-            rules={[{ required: true, message: "Please type your password!" }]}>
+            rules={[
+              { required: true, message: "Please type your password!" },
+              { type: "text", message: "Please enter a valid  password" },
+            ]}>
             <Input />
           </Form.Item>
 
@@ -83,15 +92,33 @@ const Register = () => {
             name="phone"
             rules={[
               { required: true, message: "Please type your phone number!" },
+              { type: "text", message: "Please enter a valid phone number" },
             ]}>
             <Input />
           </Form.Item>
 
-          {/* Campo de adress */}
+          {/* Campo de address */}
           <Form.Item
             label="Address"
             name="address"
-            rules={[{ required: true, message: "Please type your adress!" }]}>
+            rules={[
+              { required: true, message: "Please type your address!" },
+              { type: "text", message: "Please enter a valid address" },
+            ]}>
+            <Input />
+          </Form.Item>
+
+          {/*Campo de image*/}
+          <Form.Item
+            label="Image"
+            name="image"
+            rules={[
+              { required: true, message: "Please type your image!" },
+              {
+                type: "text",
+                message: "Please enter a valid image(only text right now)",
+              },
+            ]}>
             <Input />
           </Form.Item>
 
