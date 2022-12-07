@@ -1,10 +1,11 @@
 import React from "react";
 import { Menu } from "antd";
-import {HomeOutlined, UserOutlined, UserAddOutlined, LogoutOutlined} from "@ant-design/icons";
+import {HomeOutlined, UserOutlined, } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import Login from "../Login/Login";
 import { UserProvider } from "../../Context/UserContext/UserState";
+import Register from "../Register/Register";
 
 const Header = () => {
   return (
@@ -13,6 +14,7 @@ const Header = () => {
         <div className="loginBtn">
         <UserProvider>
           <Login />
+          <Register />
         </UserProvider>
         </div>
       
