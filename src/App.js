@@ -7,6 +7,7 @@ import Products from './components/Products/Products';
 import Cart from './components/Cart/Cart';
 import { UserProvider } from './Context/UserContext/UserState';
 import { ProductsProvider } from './Context/ProductContext/ProductsState';
+import { Footer } from './components/Footer/Footer';
 // import Register from './components/Register/Register';
 
 
@@ -23,6 +24,7 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/cart" element={<Cart />} />
             </Routes>
+            <Footer />
             {/* <Register /> */}
           </BrowserRouter>
         </ProductsProvider>

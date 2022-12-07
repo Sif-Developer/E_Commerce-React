@@ -14,7 +14,7 @@ const Cart = () => {
 
     if (cart.length <= 0) {
 
-        return <span>You need atleast one product</span>;
+        return <span>The cart is empty</span>;
 
     }
 
