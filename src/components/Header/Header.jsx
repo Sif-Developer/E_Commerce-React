@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Menu } from "antd";
 import {
   HomeOutlined,
@@ -11,8 +11,25 @@ import Login from "../Login/Login";
 import logo from "../../assets/images/logo.png";
 import Register from "../Register/Register";
 import { UserProvider } from "../../Context/UserContext/UserState";
-import Logout from "../Logout/Logout";
 import LogoutModal from "../Logout/Logout";
+
+const LoginOrLogout = () => {
+  const [token, setToken] = useState(localStorage.getItem("token"));
+
+  if (token) {
+    return (
+      <UserProvider>
+        <LogoutModal />
+      </UserProvider>
+    );
+  } else {
+    return (
+      <UserProvider>
+        <Login />
+      </UserProvider>
+    );
+  }
+};
 
 const Header = () => {
   return (
@@ -35,13 +52,13 @@ const Header = () => {
 
             <Menu.Item key="profile" icon={<UserOutlined />}>
               <Link to="/profile">Profile</Link>
+
+            
               <UserProvider>
-                <Login />
-                <LogoutModal />
                 <Register />
+                <LoginOrLogout />
               </UserProvider>
             </Menu.Item>
-            
           </>
         </Menu>
       </nav>

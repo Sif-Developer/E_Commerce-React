@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Button, Form, Input, Modal } from "antd";
-import { UserContext } from "../../Context/UserContext/UserState";
+import { UserContext, UserProvider } from "../../Context/UserContext/UserState";
 import "./Login.scss";
 import { useNavigate } from "react-router-dom";
+import LogoutModal from "../Logout/Logout";
 
 
 const Login = () => {
@@ -32,13 +33,9 @@ const Login = () => {
     setOpen(false);
   };
 
-  // useEffect(() => {
-  //   const foundToken = JSON.parse(localStorage.getItem("token"));
-  //   if (foundToken) {
-  //     navigate("/profile")
-  //   }
+    //AQUÍ ESTÁ LA FUNCIÓN CAMBIA LOGIN/LOGOUT EN BASE A HAY/NO HAY LOGOUT
 
-  // }, [login])
+ 
 
 
   return (
@@ -92,6 +89,7 @@ const Login = () => {
           </Form>
         </div>
       </Modal>
+    
     </>
   );
 

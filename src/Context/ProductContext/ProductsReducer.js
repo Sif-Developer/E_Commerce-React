@@ -1,43 +1,29 @@
 const products = (state, action) => {
+  switch (action.type) {
+    case "GET_PRODUCTS":
+      return {
+        ...state,
 
-    switch (action.type) {
+        products: action.payload,
+      };
 
-        case "GET_PRODUCTS":
+    case "ADD_CART":
+      return {
+        ...state,
 
-            return {
+        cart: [action.payload, ...state.cart],
+      };
 
-                ...state,
+    case "CLEAR_CART":
+      return {
+        ...state,
 
-                products: action.payload,
+        cart: [],
+      };
 
-            };
-
-        case "ADD_CART":
-
-            return {
-
-                ...state,
-
-                cart: [action.payload, ...state.cart],
-
-            };
-
-        case "CLEAR_CART":
-
-            return {
-
-                ...state,
-
-                cart: [],
-
-            };
-
-        default:
-
-            return state;
-
-    }
-
+    default:
+      return state;
+  }
 };
 
 export default products;
