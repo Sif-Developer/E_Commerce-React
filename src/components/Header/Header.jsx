@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Menu } from "antd";
 import {
   HomeOutlined,
@@ -7,22 +7,9 @@ import {
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import "./Header.scss";
-import Login from "../Login/Login";
 import logo from "../../assets/images/logo.png";
-import Register from "../Register/Register";
-import { UserContext, UserProvider } from "../../Context/UserContext/UserState";
-import LogoutModal from "../Logout/Logout";
-import { useContext } from "react";
+import LoginOrLogout from "../LoginOrLogout/LoginOrLogout";
 
-const LoginOrLogout = () => {
-  const { token } = useContext(UserContext);
-
-  if (token) {
-    return <LogoutModal />;
-  } else {
-    return <Login />;
-  }
-};
 
 const Header = () => {
   return (
@@ -45,8 +32,6 @@ const Header = () => {
 
             <Menu.Item key="profile" icon={<UserOutlined />}>
               <Link to="/profile">Profile</Link>
-
-              <Register />
               <LoginOrLogout />
             </Menu.Item>
           </>
