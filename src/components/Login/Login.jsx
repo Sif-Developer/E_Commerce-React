@@ -32,9 +32,6 @@ const Login = () => {
   const handleCancel = () => {
     setOpen(false);
   };
-
-    //AQUÍ ESTÁ LA FUNCIÓN CAMBIA LOGIN/LOGOUT EN BASE A HAY/NO HAY LOGOUT
-
  
 
 
