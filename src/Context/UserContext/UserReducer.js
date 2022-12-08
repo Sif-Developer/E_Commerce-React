@@ -6,6 +6,11 @@ const users = (state, action) => {
 
         token: action.payload.token,
       };
+    case "REGISTER_USER":
+      return {
+        ...state,
+        message: action.payload,
+      };
 
     default:
       return state;

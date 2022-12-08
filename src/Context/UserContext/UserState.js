@@ -45,7 +45,13 @@ export const UserProvider = ({ children }) => {
     });
     return res;
   };
-
+  const registerUser = async (user) => {
+    const res = await axios.post(API_URL + "/users/createUser", user);
+    dispatch({
+      type: "REGISTER_USER",
+      payload: res.data.message,
+    });
+  };
   return (
     <UserContext.Provider
       value={{
@@ -55,6 +61,7 @@ export const UserProvider = ({ children }) => {
 
         login,
         getUserInfo,
+        registerUser,
       }}>
       {children}
     </UserContext.Provider>

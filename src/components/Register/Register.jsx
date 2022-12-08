@@ -1,7 +1,11 @@
 import React, { useState, useRef } from "react";
 import { Button, Modal, Form, Input } from "antd";
+import { useContext } from "react";
+import { UserContext } from "../../Context/UserContext/UserState";
 
 const Register = () => {
+  const { registerUser } = useContext(UserContext);
+
   // Estado para controlar si el modal se encuentra abierto o cerrado
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -17,7 +21,7 @@ const Register = () => {
 
   // Función que se ejecuta cuando se hace submit del formulario
   const onFinish = (values) => {
-    console.log("Success:", values);
+    registerUser(values)
     //Esto sirve para que cuando se envíe el formulario (si no hay errores), se cierre automáticamente
     setIsModalOpen(false);
   };
@@ -51,10 +55,7 @@ const Register = () => {
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
           autoComplete="off"
-          ref={formRef}
-          >
-
-
+          ref={formRef}>
           {/* Campo de name */}
           <Form.Item
             label="Name"
@@ -129,10 +130,12 @@ const Register = () => {
             <Button type="primary" htmlType="submit">
               Submit
             </Button>
-            <Button type="primary" htmlType="button" onClick={()=> formRef.current.resetFields()}>
+            <Button
+              type="primary"
+              htmlType="button"
+              onClick={() => formRef.current.resetFields()}>
               Reset
             </Button>
-          
           </Form.Item>
         </Form>
       </Modal>
