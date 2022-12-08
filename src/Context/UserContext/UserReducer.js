@@ -11,6 +11,11 @@ const users = (state, action) => {
         ...state,
         message: action.payload,
       };
+      case "LOGOUT":
+        return{
+          ...state,
+          token:null
+        }
 
     default:
       return state;

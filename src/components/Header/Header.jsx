@@ -11,6 +11,8 @@ import Login from "../Login/Login";
 import logo from "../../assets/images/logo.png";
 import Register from "../Register/Register";
 import { UserProvider } from "../../Context/UserContext/UserState";
+import Logout from "../Logout/Logout";
+import LogoutModal from "../Logout/Logout";
 
 const Header = () => {
   return (
@@ -35,9 +37,11 @@ const Header = () => {
               <Link to="/profile">Profile</Link>
               <UserProvider>
                 <Login />
+                <LogoutModal />
                 <Register />
               </UserProvider>
             </Menu.Item>
+            
           </>
         </Menu>
       </nav>

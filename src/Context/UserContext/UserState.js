@@ -38,13 +38,13 @@ export const UserProvider = ({ children }) => {
         authorization: token,
       },
     });
-
     dispatch({
       type: "GET_USER_INFO",
       payload: res.data,
     });
     return res;
   };
+
   const registerUser = async (user) => {
     const res = await axios.post(API_URL + "/users/createUser", user);
     dispatch({
@@ -52,16 +52,34 @@ export const UserProvider = ({ children }) => {
       payload: res.data.message,
     });
   };
+
+  const logout = async () => {
+    const token = JSON.parse(localStorage.getItem("token"));
+
+    const res = await axios.delete(API_URL + "/users/logoutUser", {
+      headers: {
+        authorization: token,
+      },
+    });
+    dispatch({
+      type: "LOGOUT",
+      payload: res.data,
+    });
+    if (res.data) {
+      localStorage.removeItem("token");
+    }
+  };
+
   return (
     <UserContext.Provider
       value={{
         token: state.token,
 
         user: state.user,
-
         login,
         getUserInfo,
         registerUser,
+        logout,
       }}>
       {children}
     </UserContext.Provider>
