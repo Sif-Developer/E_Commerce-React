@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import { UserProvider } from "./Context/UserContext/UserState";
 import { Footer } from "./components/Footer/Footer";
+import Products from "./components/Products/Products";
 
 
 
@@ -15,8 +16,8 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products/>} />
           </Routes>
-          <Home />
           <Footer />
         </BrowserRouter>
       </UserProvider>

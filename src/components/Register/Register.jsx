@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Button, Modal, Form, Input } from "antd";
 import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext/UserState";
-
+import "./Register.scss"
 const Register = () => {
   const { registerUser } = useContext(UserContext);
 
@@ -37,7 +37,7 @@ const Register = () => {
   return (
     <>
       {/* Botón que muestra el modal al hacer click en él */}
-      <Button type="primary" onClick={showModal}>
+      <Button type="primary" className="registerButton" onClick={showModal}>
         Register
       </Button>
 
