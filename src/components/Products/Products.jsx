@@ -1,49 +1,36 @@
 import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "../../Context/ProductContext/ProductsState";
 import "./Products.scss";
-import undefined from "../../assets/images/undefined.jpg"
-
+import undefined from "../../assets/images/undefined.jpg";
 
 const Products = () => {
+  const { getProducts, products, addCart, cart } = useContext(ProductsContext);
 
-    const { getProducts, products, addCart, cart } = useContext(ProductsContext);
+  useEffect(() => {
+    getProducts();
+  }, []);
 
-    useEffect(() => {
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
-        getProducts();
+  const product = products.map((product) => {
+    return (
+      <div className="product-box" key={product.id}>
+        <h3>{product.name}</h3>
 
-    }, []);
+        <img src={undefined} className="productimg" alt="news"></img>
 
-    useEffect(() => {
+        <span> Price: {product.price.toFixed(2)} €</span>
 
-        localStorage.setItem("cart", JSON.stringify(cart));
-        
-        }, [cart]);
+        <span>{product.description}</span>
 
-    const product = products.map((product) => {
+        <button onClick={() => addCart(product)}>Add Cart</button>
+      </div>
+    );
+  });
 
-        return (
-
-            <div className="product-box" key={product.id}>
-
-                <h3>{product.name}</h3>
-
-                <img src={undefined} className="productimg" alt="news"></img>
-
-                <span> Price: {product.price.toFixed(2)} €</span>
-
-                <span>{product.description}</span>
-
-                <button onClick={() => addCart(product)}>Add Cart</button>
-
-            </div>
-
-        );
-
-    });
-
-    return <div className="product-container">{product}</div>;
-
+  return <div className="product-container">{product}</div>;
 };
 
 export default Products;
