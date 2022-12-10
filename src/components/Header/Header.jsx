@@ -1,7 +1,7 @@
 import React from "react";
 import { Menu } from "antd";
 import {
-  HomeOutlined,
+  HomeOutlined, 
   ShoppingCartOutlined,
   ShoppingOutlined,
   UserOutlined,
