@@ -39,7 +39,7 @@ const Header = () => {
           </>
           {token ? (
             <Menu.Item key="profile" icon={<UserOutlined />}>
-              <Link to="/profile">{userLS.name}</Link>
+              <Link to="/profile">{userLS.name.charAt(0).toUpperCase() + userLS.name.slice(1)}</Link>
               <LogoutModal />
             </Menu.Item>
           ) : (
