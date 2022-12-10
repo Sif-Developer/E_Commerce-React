@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Button, Form, Input, Modal } from "antd";
-import { UserContext, UserProvider } from "../../Context/UserContext/UserState";
+import { UserContext, } from "../../Context/UserContext/UserState";
 import "./Login.scss";
 import { useNavigate } from "react-router-dom";
-import LogoutModal from "../Logout/Logout";
 
 
 const Login = () => {

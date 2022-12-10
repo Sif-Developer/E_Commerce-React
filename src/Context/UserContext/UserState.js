@@ -4,9 +4,10 @@ import UserReducer from "./UserReducer";
 
 const token = JSON.parse(localStorage.getItem("token"));
 const user = JSON.parse(localStorage.getItem("user"))
+
 const initialState = {
   token: token ? token : null,
-  user: null,
+  user: user ? user : null,
 };
 
 const API_URL = "http://localhost:3000";
@@ -84,7 +85,6 @@ export const UserProvider = ({ children }) => {
         registerUser,
         logout,
       }}>
-        {/* {console.log(user)} */}
       {children}
     </UserContext.Provider>
   );
