@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Menu } from "antd";
-import { HomeOutlined, UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { UserContext, } from "../../Context/UserContext/UserState";
+import { HomeOutlined, ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import Login from "../Login/Login";
+import Logout from "../Logout/Logout";
+import Register from "../Register/Register";
 import logo from "../../assets/images/logo.png"
 
 const Header = () => {
-
+  const { token } = useContext(UserContext);
   return (
 
     <header>
@@ -23,20 +26,22 @@ const Header = () => {
             <Menu.Item key="products" icon={<HomeOutlined />}>
               <Link to="/products">Products</Link>
             </Menu.Item>
-
-            <Menu.Item key="login" icon={<UserOutlined />}>
-              <Login />
-            </Menu.Item>
             
             <Menu.Item key="cart" icon={<ShoppingCartOutlined />}>
               <Link to="/cart">Cart</Link>
             </Menu.Item>
-
-            <Menu.Item key="profile" icon={<UserOutlined />}>
+          </> 
+          {token ? (
+            <Menu.Item>
               <Link to="/profile">Profile</Link>
+              <Logout />
             </Menu.Item>
-
-          </>
+          ) : (
+            <Menu.Item>
+              <Register />
+              <Login />
+            </Menu.Item>
+          )}
         </Menu>
       </nav>
     </header>

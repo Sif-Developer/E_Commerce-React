@@ -24,6 +24,7 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/profile" element={<Profile />}/>
             </Routes>
+           
             <Footer />
           </BrowserRouter>
         </ProductsProvider>

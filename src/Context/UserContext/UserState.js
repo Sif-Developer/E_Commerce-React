@@ -5,6 +5,8 @@ import UserReducer from "./UserReducer";
 const token = JSON.parse(localStorage.getItem("token"));
 const user = JSON.parse(localStorage.getItem("user"))
 
+console.log(user)
+
 const initialState = {
   token: token ? token : null,
   user: user ? user : null,
@@ -59,7 +61,7 @@ export const UserProvider = ({ children }) => {
 
   const logout = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
-
+   
     const res = await axios.delete(API_URL + "/users/logoutUser", {
       headers: {
         authorization: token,
@@ -72,6 +74,8 @@ export const UserProvider = ({ children }) => {
     if (res.data) {
       localStorage.removeItem("token");
       localStorage.removeItem("cart");
+      localStorage.removeItem("user")
+     
     }
   };
 
@@ -86,6 +90,7 @@ export const UserProvider = ({ children }) => {
         logout,
       }}>
       {children}
+
     </UserContext.Provider>
   );
 };
