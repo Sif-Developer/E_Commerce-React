@@ -8,8 +8,7 @@ import Cart from './components/Cart/Cart';
 import { UserProvider } from './Context/UserContext/UserState';
 import { ProductsProvider } from './Context/ProductContext/ProductsState';
 import { Footer } from './components/Footer/Footer';
-// import Register from './components/Register/Register';
-
+import Profile from './components/Profile/Profile';
 
 
 function App() {
@@ -23,10 +22,10 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/profile" element={<Profile />}/>
             </Routes>
             <Home/>
             <Footer />
-            {/* <Register /> */}
           </BrowserRouter>
         </ProductsProvider>
       </UserProvider>

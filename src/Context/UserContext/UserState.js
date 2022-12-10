@@ -3,7 +3,7 @@ import axios from "axios";
 import UserReducer from "./UserReducer";
 
 const token = JSON.parse(localStorage.getItem("token"));
-
+const user = JSON.parse(localStorage.getItem("user"))
 const initialState = {
   token: token ? token : null,
   user: null,
@@ -27,17 +27,20 @@ export const UserProvider = ({ children }) => {
 
     if (res.data) {
       localStorage.setItem("token", JSON.stringify(res.data.token));
+      localStorage.setItem("user",JSON.stringify(res.data.user))
     }
   };
 
-  const getUserInfo = async () => {
+  const getUser = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
 
-    const res = await axios.get(API_URL + "/users/getInfo", {
+    const res = await axios.get(API_URL + "/users/getUsers", {
       headers: {
         authorization: token,
       },
     });
+
+
     dispatch({
       type: "GET_USER_INFO",
       payload: res.data,
@@ -75,13 +78,13 @@ export const UserProvider = ({ children }) => {
     <UserContext.Provider
       value={{
         token: state.token,
-
         user: state.user,
         login,
-        getUserInfo,
+        getUser,
         registerUser,
         logout,
       }}>
+        {/* {console.log(user)} */}
       {children}
     </UserContext.Provider>
   );
