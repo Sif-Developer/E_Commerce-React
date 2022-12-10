@@ -2,8 +2,21 @@ import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "../../Context/ProductContext/ProductsState";
 import "./Products.scss";
 import undefined from "../../assets/images/undefined.jpg";
+import { Button, notification } from 'antd';
 
 const Products = () => {
+  
+  
+    const handleAddToCart = (product) => {
+    if (localStorage.getItem("token")) {
+      addCart(product);
+    } else {
+      notification.warning({
+        message: "You must be logged in to add a product to your cart",
+      });
+    }
+  };
+
   const { getProducts, products, addCart, cart } = useContext(ProductsContext);
 
   useEffect(() => {
@@ -25,7 +38,7 @@ const Products = () => {
 
         <span>{product.description}</span>
 
-        <button onClick={() => addCart(product)}>Add Cart</button>
+        <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
       </div>
     );
   });
