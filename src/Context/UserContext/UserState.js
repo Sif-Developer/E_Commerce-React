@@ -72,6 +72,7 @@ export const UserProvider = ({ children }) => {
     if (res.data) {
       localStorage.removeItem("token");
       localStorage.removeItem("cart");
+      localStorage.removeItem("user")
     }
   };
 

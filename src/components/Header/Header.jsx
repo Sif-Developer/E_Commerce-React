@@ -1,7 +1,7 @@
 import React from "react";
 import { Menu } from "antd";
 import {
-  HomeOutlined, 
+  HomeOutlined,
   ShoppingCartOutlined,
   ShoppingOutlined,
   UserOutlined,
@@ -16,7 +16,9 @@ import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext/UserState";
 
 const Header = () => {
-  const { token, user } = useContext(UserContext);
+  const userLS = JSON.parse(localStorage.getItem("user"));
+  console.log(userLS);
+  const { token } = useContext(UserContext);
   return (
     <header>
       <img src={logo} className="headerlogo" alt="news"></img>
@@ -34,13 +36,10 @@ const Header = () => {
             <Menu.Item key="cart" icon={<ShoppingCartOutlined />}>
               <Link to="/cart">Cart</Link>
             </Menu.Item>
-
-            <Menu.Item key="profile" icon={<UserOutlined />}>
-              <Link to="/profile">{user.name}</Link>
-            </Menu.Item>
-          </> 
+          </>
           {token ? (
-            <Menu.Item>
+            <Menu.Item key="profile" icon={<UserOutlined />}>
+              <Link to="/profile">{userLS.name}</Link>
               <LogoutModal />
             </Menu.Item>
           ) : (
