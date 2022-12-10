@@ -16,7 +16,7 @@ import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext/UserState";
 
 const Header = () => {
-  const { token } = useContext(UserContext);
+  const { token, user } = useContext(UserContext);
   return (
     <header>
       <img src={logo} className="headerlogo" alt="news"></img>
@@ -36,7 +36,7 @@ const Header = () => {
             </Menu.Item>
 
             <Menu.Item key="profile" icon={<UserOutlined />}>
-              <Link to="/profile">Profile</Link>
+              <Link to="/profile">{user.name}</Link>
             </Menu.Item>
           </> 
           {token ? (
