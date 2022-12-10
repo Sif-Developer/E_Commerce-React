@@ -29,7 +29,7 @@ export const ProductsProvider = ({ children }) => {
   };
 
   const addCart = (product) => {
-    dispatch({
+    dispatch({ 
       type: "ADD_CART",
 
       payload: product,
