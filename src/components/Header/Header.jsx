@@ -17,7 +17,6 @@ import { UserContext } from "../../Context/UserContext/UserState";
 
 const Header = () => {
   const userLS = JSON.parse(localStorage.getItem("user"));
-  console.log(userLS);
   const { token } = useContext(UserContext);
   return (
     <header>

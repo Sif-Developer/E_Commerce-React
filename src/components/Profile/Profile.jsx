@@ -6,6 +6,10 @@ import { UserContext } from "../../Context/UserContext/UserState";
 
 
 const Profile = () => {
+    
+const userLS = JSON.parse(localStorage.getItem("user"));
+
+
   const { user, getUser } = useContext(UserContext);
   useEffect(() => {
     getUser();
@@ -14,8 +18,8 @@ const Profile = () => {
   return (
     <div>
       <h2>Profile</h2>
-      <p>{user.name}</p>
-      <p>{user.email}</p>
+      <p>{userLS.name}</p>
+      <p>{userLS.email}</p>
       <p></p>
     </div>
   );
