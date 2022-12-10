@@ -38,7 +38,7 @@ const Header = () => {
             <Menu.Item key="profile" icon={<UserOutlined />}>
               <Link to="/profile">Profile</Link>
             </Menu.Item>
-          </>
+          </> 
           {token ? (
             <Menu.Item>
               <LogoutModal />
