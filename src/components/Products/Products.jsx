@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "../../Context/ProductContext/ProductsState";
 import "./Products.scss";
-import undefined from "../../assets/images/undefined.jpg";
 import { Button, notification } from "antd";
 
 const Products = () => {
@@ -27,11 +26,15 @@ const Products = () => {
   }, [cart]);
 
   const product = products.map((product) => {
+
+    const imageUrl = "http://localhost:3000/images/products/" + product.image
+
     return (
       <div className="product-box" key={product.id}>
+
         <h3>{product.name}</h3>
 
-        <img src={undefined} className="productimg" alt="news"></img>
+        <img src={imageUrl}  className="productimg" alt="productimg"></img>
 
         <span> Price: {product.price.toFixed(2)} €</span>
 

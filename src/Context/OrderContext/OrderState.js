@@ -2,7 +2,7 @@ import { createContext } from "react";
 import axios from "axios";
 
 const initialState = {};
-const API_URL = "http://localhost:8080";
+const API_URL = "http://localhost:3000";
 
 export const OrderContext = createContext(initialState);
 export const OrderProvider = ({ children }) => {
