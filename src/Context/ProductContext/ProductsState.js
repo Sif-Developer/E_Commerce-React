@@ -1,7 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import axios from "axios";
 import ProductsReducer from "./ProductsReducer";
-import products from "./ProductsReducer";
 
 const cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -17,7 +16,7 @@ export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(ProductsReducer, initialState);
 
   const getProducts = async () => {
-    const res = await axios.get(API_URL + "/products/getAllProducts");
+    const res = await axios.get(API_URL + "/products/getAll");
 
     dispatch({
       type: "GET_PRODUCTS",

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "../../Context/ProductContext/ProductsState";
 import "./Products.scss";
-import undefined from "../../assets/images/undefined.jpg";
 import { Button, notification } from "antd";
 
 const Products = () => {

@@ -7,7 +7,7 @@ import { Button, Modal } from "antd";
 
 const Profile = () => {
 
-  const { user, getUserLogged,OrdersNamed} = useContext(UserContext);
+  const { user, getUserLogged} = useContext(UserContext);
 
   const YourOrdersButton = () => {
     const [visible, setVisible] = useState(false);
@@ -54,7 +54,6 @@ const Profile = () => {
     <div className="profile">
     <div className="profile-container">
   
- {     console.log(OrdersNamed)}
       <h2>Your Profile</h2>
       <span><b>Name: </b>{user.name}</span>
       <span><b>Email: </b> {user.email}</span>
