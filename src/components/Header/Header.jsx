@@ -14,9 +14,11 @@ const Header = () => {
   return (
 
     <header>
-
+      <div className="headerDiv">
+      <span className="headerSpan">GAME</span>
       <img src={logo} className="headerlogo" alt="news"></img>
-
+      <span className="headerSpan">SHOP</span>
+      </div>
       <nav>
         <Menu className="menuNav" mode="horizontal">
           <Menu.Item key="home" icon={<HomeOutlined />}>

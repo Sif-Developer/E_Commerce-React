@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Dash";
+    src: url("../../assets/fonts/GAME_glm.ttf");
+}
+
 
 .loginBtn{
     display: flex;
@@ -30,4 +35,18 @@ nav {
 
 .headerlogo {
     width: 150px;
+}
+
+.headerSpan {
+    color: white;
+    font-family: "Dash";
+    font-size: 6em;
+}
+
+.headerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.3em;
+    gap: 4em;
 }

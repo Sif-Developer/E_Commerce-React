@@ -22,7 +22,6 @@ const userLS = JSON.parse(localStorage.getItem("user"));
       <h2>Your Profile</h2>
       <span><b>Name: </b>{userLS.name}</span>
       <span><b>Email: </b> {userLS.email}</span>
-      <span>{userLS.Category.name}</span>
       <img src={imageUrl}  className="userimg" alt="userimg"></img>
       <span><b>Address:</b> {userLS.address}</span>
       <span><b>Phone: </b> {userLS.phone}</span>
