@@ -1,10 +1,12 @@
 import { useContext, useEffect } from "react";
 import { ProductsContext } from "../../Context/ProductContext/ProductsState";
+import { Button} from "antd";
 import './Cart.scss';
+import { OrdersContext } from "../../Context/OrderContext/OrderState";
 
 const Cart = () => {
   const { cart, clearCart } = useContext(ProductsContext);
-
+  const {createOrder}  = useContext(OrdersContext)
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -35,6 +37,7 @@ const Cart = () => {
         <h2>Your cart</h2>
         {cartItem}
         <button onClick={() => clearCart()}>Clear cart</button>
+        <Button onClick={()=>createOrder(cart)}>Finalizar pedido</Button>
       </div>
     </div>
   );

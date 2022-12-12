@@ -9,6 +9,7 @@ import { UserProvider } from './Context/UserContext/UserState';
 import { ProductsProvider } from './Context/ProductContext/ProductsState';
 import { Footer } from './components/Footer/Footer';
 import Profile from './components/Profile/Profile';
+import { OrderProvider } from './Context/OrderContext/OrderState';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <div className="App">
       <UserProvider >
         <ProductsProvider>
+          <OrderProvider>
           <BrowserRouter>
             <Header />
             <Routes>
@@ -26,6 +28,7 @@ function App() {
             </Routes>
             <Footer />
           </BrowserRouter>
+          </OrderProvider>
         </ProductsProvider>
       </UserProvider>
     </div>
