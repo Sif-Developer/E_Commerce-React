@@ -63,6 +63,7 @@ const Profile = () => {
       <div>Phone: {user.phone}</div>
       <spa>Role: {user.role}</spa>
       <div>
+        {console.log(YourOrdersButton)}
         <YourOrdersButton />
       </div>
     </div>
