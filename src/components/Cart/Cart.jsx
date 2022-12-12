@@ -37,7 +37,7 @@ const Cart = () => {
         <h2>Your cart</h2>
         {cartItem}
         <button onClick={() => clearCart()}>Clear cart</button>
-        <Button onClick={()=>createOrder(cart)}>Finalizar pedido</Button>
+        <Button onClick={()=>createOrder(cart)}>Finish order</Button>
       </div>
     </div>
   );
