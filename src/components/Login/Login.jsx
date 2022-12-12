@@ -1,13 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Form, Input, Modal } from "antd";
 import { UserContext, } from "../../Context/UserContext/UserState";
 import "./Login.scss";
-import { useNavigate } from "react-router-dom";
-
 
 const Login = () => {
   const { login } = useContext(UserContext);
-  const navigate = useNavigate();
 
   const onFinish = (values) => {
     login(values);

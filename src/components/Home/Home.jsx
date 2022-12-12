@@ -4,8 +4,6 @@ import "./Home.scss";
 import home1 from "../../assets/images/home1.jpg"
 import games from "../../assets/images/games.png"
 import console from "../../assets/images/consolashome.jpg"
-import prepaid from "../../assets/images/prepaidcard.jpg"
-
 
 function Home() {
 
@@ -28,9 +26,6 @@ function Home() {
         </div>
         <div>
           <h3 style={contentStyle}><img src={console} className="producthome" alt="games"></img></h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}><img src={prepaid} className="prepaid" alt="cards"></img></h3>
         </div>
       </Carousel>
       </div>
