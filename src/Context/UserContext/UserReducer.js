@@ -16,6 +16,11 @@ const users = (state, action) => {
           ...state,
           token:null
         }
+        case "GET_USER_LOGGED_INFO":
+        return{
+          ...state,
+          user:action.payload
+        }
 
     default:
       return state;
