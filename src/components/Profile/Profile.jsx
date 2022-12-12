@@ -4,28 +4,36 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext/UserState";
 
-
 const Profile = () => {
-    
-const userLS = JSON.parse(localStorage.getItem("user"));
+  const { user, getUserLogged, OrdersNamed } = useContext(UserContext);
 
-
-  const { user, getUser } = useContext(UserContext);
+  
+  
+  
+  
+  
   useEffect(() => {
-    getUser();
+    getUserLogged();
   }, []);
-
-  const imageUrl = "http://localhost:3000/images/users/" + userLS.image
-
+  
+  const imageUrl = "http://localhost:3000/images/users/" + user.image;
+  
+  
   return (
     <div>
+ {     console.log(OrdersNamed)}
       <h2>Your Profile</h2>
-      <p>Name: {userLS.name}</p>
-      <p>Email: {userLS.email}</p>
-      <img src={imageUrl}  className="userimg" alt="userimg"></img>
-      <span>Address: {userLS.address}</span>
-      <span>Phone: {userLS.phone}</span>
-      <span>Role: {userLS.role}</span>
+      <p>Name: {user.name}</p>
+      <p>Email: {user.email}</p>
+      <img src={imageUrl} className="userimg" alt="userimg"></img>
+      <span>Address: {user.address}</span>
+      <span>Phone: {user.phone}</span>
+      <span>Role: {user.role}</span>
+      <span>
+        Orders :
+        {console.log(user)}
+          {user.Orders?.map((order) => order.id)}
+      </span>
     </div>
   );
 };

@@ -1,11 +1,13 @@
 import React, { useState, useRef } from "react";
-import { Button, Modal, Form, Input } from "antd";
+import { Button, Modal, Form, Input, Upload } from "antd";
+import { UploadOutlined } from '@ant-design/icons';
 import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext/UserState";
 
 const Register = () => {
   const { registerUser } = useContext(UserContext);
 
+  //OPEN AND CLOSE MODAL OF THE REGISTRATION BUTTON
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -17,8 +19,8 @@ const Register = () => {
   };
 
   const onFinish = (values) => {
-    registerUser(values)
-   
+    registerUser(values);
+
     setIsModalOpen(false);
   };
 
@@ -26,8 +28,9 @@ const Register = () => {
     console.log("Failed:", errorInfo);
   };
 
-  
   const formRef = useRef();
+
+  //UPLOAD IMAGE
 
   return (
     <>
@@ -49,7 +52,6 @@ const Register = () => {
           onFinishFailed={onFinishFailed}
           autoComplete="off"
           ref={formRef}>
-
           <Form.Item
             label="Name"
             name="name"
@@ -57,8 +59,8 @@ const Register = () => {
               {
                 required: true,
                 message: "Please type your name!",
-                type: "text"
-              }
+                type: "text",
+              },
             ]}>
             <Input />
           </Form.Item>
@@ -71,7 +73,7 @@ const Register = () => {
                 required: true,
                 message: "Please type your email!",
                 type: "email",
-              }
+              },
             ]}>
             <Input />
           </Form.Item>
@@ -83,7 +85,7 @@ const Register = () => {
               {
                 required: true,
                 message: "Please type your password!",
-                type: "text"
+                type: "text",
               },
             ]}>
             <Input />
@@ -96,7 +98,7 @@ const Register = () => {
               {
                 required: true,
                 message: "Please type your phone number!",
-                type: "text"
+                type: "text",
               },
             ]}>
             <Input />
@@ -109,13 +111,14 @@ const Register = () => {
               {
                 required: true,
                 message: "Please type your address!",
-                type: "text"
+                type: "text",
               },
             ]}>
             <Input />
           </Form.Item>
-          <Form.Item
-            label="Image"
+          
+
+          <Form.Item label="Image"
             name="image"
             rules={[
               {
@@ -124,7 +127,11 @@ const Register = () => {
                 type: "file",
               },
             ]}>
-            <Input />
+            <Upload>
+              <Button>
+                <UploadOutlined /> Seleccionar imagen
+              </Button>
+            </Upload>
           </Form.Item>
 
           <Form.Item>

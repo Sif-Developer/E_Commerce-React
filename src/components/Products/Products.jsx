@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "../../Context/ProductContext/ProductsState";
 import "./Products.scss";
+import undefined from "../../assets/images/undefined.jpg";
 import { Button, notification } from "antd";
 
 const Products = () => {
@@ -25,7 +26,7 @@ const Products = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const product = products.map((product) => {
+  const product = products?.map((product) => {
 
     const imageUrl = "http://localhost:3000/images/products/" + product.image
 
@@ -44,7 +45,6 @@ const Products = () => {
       </div>
     );
   });
-
   return <div className="product-container">{product}</div>;
 };
 
