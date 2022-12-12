@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import "./Register.scss";
 import { Button, Modal, Form, Input, Upload } from "antd";
 import { UploadOutlined } from '@ant-design/icons';
 import { useContext } from "react";
@@ -34,7 +35,7 @@ const Register = () => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
+      <Button className="registerbtn" type="primary" onClick={showModal}>
         Register
       </Button>
 
@@ -135,10 +136,11 @@ const Register = () => {
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" htmlType="submit">
+            <Button className="sub-btn" type="primary" htmlType="submit">
               Submit
             </Button>
             <Button
+            className="reset-btn"
               type="primary"
               htmlType="button"
               onClick={() => formRef.current.resetFields()}>
