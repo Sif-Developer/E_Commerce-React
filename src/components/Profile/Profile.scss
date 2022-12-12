@@ -1,0 +1,21 @@
+.userimg {
+    width: 30vw;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid black 2px;
+    width: 65vw;
+    border-radius: 8px;
+    gap: 2em;
+    background-color: white;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    background-image: url("../../assets/images/Fondo-Web.jpg");
+}
