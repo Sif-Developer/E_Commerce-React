@@ -26,20 +26,24 @@ const Header = () => {
             <Menu.Item key="products" icon={<HomeOutlined />}>
               <Link to="/products">Products</Link>
             </Menu.Item>
-            
+
             <Menu.Item key="cart" icon={<ShoppingCartOutlined />}>
               <Link to="/cart">Cart</Link>
             </Menu.Item>
-          </> 
+          </>
           {token ? (
-            <Menu.Item>
-              <Link to="/profile">Profile</Link>
-              <Logout />
-            </Menu.Item>
+            <>
+              <Menu.Item key="profile"  icon={<UserOutlined />}>
+                <Link to="/profile">Profile</Link>
+              </Menu.Item>
+              <Menu.Item key="logout">
+                <Logout />
+              </Menu.Item>
+            </>
           ) : (
             <Menu.Item>
               <Register />
-              <Login />
+              <Login key="login" icon={<ShoppingCartOutlined />}/>
             </Menu.Item>
           )}
         </Menu>

@@ -1,4 +1,4 @@
-import { Spin } from "antd";
+import "./Profile.scss";
 import React from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
@@ -21,7 +21,6 @@ const Profile = () => {
   
   return (
     <div>
- {     console.log(OrdersNamed)}
       <h2>Your Profile</h2>
       <p>Name: {user.name}</p>
       <p>Email: {user.email}</p>
@@ -31,8 +30,7 @@ const Profile = () => {
       <span>Role: {user.role}</span>
       <span>
         Orders :
-        {console.log(user)}
-          {user.Orders?.map((order) => order.id)}
+          {user.Orders?.map((order) => order.Products?.map(product => <p> Order:  {product.name}</p>))}
       </span>
     </div>
   );
