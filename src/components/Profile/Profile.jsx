@@ -30,7 +30,7 @@ const Profile = () => {
       <span>Role: {user.role}</span>
       <span>
         Orders :
-          {user.Orders?.map((order) => order.Products?.map(product => <p> Order:  {product.name}</p>))}
+          {user.Orders?.map((order) => order.Products?.map(product => <p> Products name  {product.name}</p>))}
       </span>
     </div>
   );
