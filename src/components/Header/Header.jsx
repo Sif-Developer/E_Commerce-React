@@ -33,17 +33,17 @@ const Header = () => {
           </>
           {token ? (
             <>
-              <Menu.Item icon={<UserOutlined />}>
+              <Menu.Item key="profile"  icon={<UserOutlined />}>
                 <Link to="/profile">Profile</Link>
               </Menu.Item>
-              <Menu.Item>
+              <Menu.Item key="logout">
                 <Logout />
               </Menu.Item>
             </>
           ) : (
             <Menu.Item>
               <Register />
-              <Login icon={<ShoppingCartOutlined />}/>
+              <Login key="login" icon={<ShoppingCartOutlined />}/>
             </Menu.Item>
           )}
         </Menu>

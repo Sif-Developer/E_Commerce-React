@@ -29,12 +29,18 @@ const Products = () => {
 
     const imageUrl = "http://localhost:3000/images/products/" + product.image
 
+    const category = ((product || {}).Category || {}).name;
+
+    console.log(category)
+    
     return (
       <div className="product-box" key={product.id}>
 
         <h3>{product.name}</h3>
 
         <img src={imageUrl}  className="productimg" alt="productimg"></img>
+
+        <span>{category}</span>
 
         <span> Price: {product.price.toFixed(2)} €</span>
 

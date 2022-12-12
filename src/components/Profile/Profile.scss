@@ -1,5 +1,5 @@
 .userimg {
-    width: 30vw;
+    width: 40vw;
 }
 
 .profile-container {
@@ -12,10 +12,12 @@
     border-radius: 8px;
     gap: 2em;
     background-color: white;
+    padding: 1em;
 }
 
 .profile {
     display: flex;
     justify-content: center;
     background-image: url("../../assets/images/Fondo-Web.jpg");
+    padding: 1em;
 }
