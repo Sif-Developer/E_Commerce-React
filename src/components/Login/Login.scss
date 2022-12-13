@@ -1,44 +1,44 @@
 #basic {
-   font-size:small;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-}
-
-.container {
+    font-size:small;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 10px;
-}
-
-.ant-modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#myform {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-}
-
-.loginReturnBtn{
-    display: inline-block;
-    width: 8em;
-    
-}
-.loginSendBtn{
-    display: inline-block;
-    width: 8em;
-    background-color: black;
-    color: white;
-}
-
-.lgnbtn {
-    background-color: black;
-}
+ }
+ 
+ .container {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding: 10px;
+ }
+ 
+ .ant-modal-content {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ #myform {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center; 
+ }
+ 
+ .loginReturnBtn{
+     display: inline-block;
+     width: 8em;
+     
+ }
+ .loginSendBtn{
+     display: inline-block;
+     width: 8em;
+     background-color: black;
+     color: white;
+ }
+ 
+ .btnLogin{
+     background-color: black;
+ }

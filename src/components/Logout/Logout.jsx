@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Button, Modal } from "antd";
 import { UserContext } from "../../Context/UserContext/UserState";
+import "./Logout.scss"
 
 const LogoutModal = () => {
   const { logout } = useContext(UserContext);
@@ -25,7 +26,7 @@ const LogoutModal = () => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
+      <Button className="logoutButton" type="primary" onClick={showModal}>
         Logout
       </Button>
       <Modal

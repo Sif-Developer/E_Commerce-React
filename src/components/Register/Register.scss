@@ -1,11 +1,15 @@
-.sub-btn {
-    background-color: black;
-}
-
-.reset-btn {
-    background-color: grey;
-}
-
-.registerbtn {
-    background-color: black;
-}
+.registerBtn{
+    margin-right: 1em;
+    background-color: black;   
+   }
+   
+   .submitRegister{
+   background-color:black;
+   display: flex;
+   justify-content: center;
+   margin-bottom: 1em;
+   }
+   
+   .resetRegister{
+   background-color: black;
+   }
