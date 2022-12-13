@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { ProductsContext } from "../../Context/ProductContext/ProductsState";
-import { Button} from "antd";
+import { Button, Typography} from "antd";
 import './Cart.scss';
 import { OrdersContext } from "../../Context/OrderContext/OrderState";
 
@@ -17,7 +17,12 @@ const Cart = () => {
   }, [cart]);
 
   if (cart.length <= 0) {
-    return <span>The cart is empty</span>;
+    return <div style={{ height: '40em' }}>
+    <Typography align="center">
+      <p className="emptyCart">The cart is empty</p>
+      <p className="subtitleEmptyCart">Add products to purchase them</p>
+    </Typography>
+  </div>;
   }
 
   const cartItem = cart.map((cartItem, i) => {
