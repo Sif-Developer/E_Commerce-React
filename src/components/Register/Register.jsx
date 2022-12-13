@@ -118,18 +118,15 @@ const Register = () => {
           </Form.Item>
           <Form.Item
             label="image"
-            name="Image"
+            name="image"
             rules={[
               {
                 required: true,
-                message: "Please upload a file!",
+                message: "Please type the name of your image!",
+                type: "text",
               },
             ]}>
-            <Upload>
-              <Button>
-                <UploadOutlined /> Select your image
-              </Button>
-            </Upload>
+            <Input />
           </Form.Item>
 
           <Form.Item>
