@@ -20,27 +20,27 @@ Discord
  # Preview
 
  ### HOME
-![image] ("./src/assets/imgReadme/home-page.png)
+![image] (assets/imgReadme/home-page.png)
 
 ### PRODUCTS
-![image] ("./src/assets/imgReadme/Products-page.png)
+![image] (assets/imgReadme/Products-page.png)
 
 ### REGISTER 
-![image] ("./src/assets/imgReadme/Register.png)
+![image] (assets/imgReadme/Register.png)
 
 ### LOG IN
-![image] ("./src/assets/imgReadme/Login.png)
+![image] (assets/imgReadme/Login.png)
 
 ### CART
-![image] ("./src/assets/imgReadme/Cart-and-make-an-order.png)
+![image] (assets/imgReadme/Cart-and-make-an-order.png)
 ### ORDERS 
-![image] ("./src/assets/imgReadme/Orders-printed.png)
+![image] (assets/imgReadme/Orders-printed.png)
 ### USER PROFILE
-![image] ("./src/assets/imgReadme/user-profile.png)
+![image] (assets/imgReadme/user-profile.png)
 ### ROOT BACKEND
-![image] ("./src/assets/imgReadme/backend.png)
+![image] (assets/imgReadme/backend.png)
 ### ROOT FRONT-END
-![image] ("./src/assets/imgReadme/frontend.png")
+![image] (assets/imgReadme/frontend.png")
 
 
 Pair Programing by [Sif Et tabaa](https://github.com/Sif03) & [Sergio Vidal](https://github.com/SergioJ-Vidal).
