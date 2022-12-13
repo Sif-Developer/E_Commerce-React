@@ -1,11 +1,11 @@
 # FrontEnd Project with React | E - commerce
-En este proyecto hemos creado un e-commerce usando las apis de nuestro backend hecho en mysql.
-
+In this project, we have created an e-commerce website using the APIs from our MySQL backend.
 ## Pair programming 
-Para colaborar en equipo usamos herramientas como :
-- Ramas de git
-- Trello
-- Discord
+To collaborate as a team, we used tools such as:
+
+Git branches
+Trello
+Discord
 
 ## Used technology
  - React with Context
@@ -18,8 +18,6 @@ Para colaborar en equipo usamos herramientas como :
  - Git/ Github
 
  # Preview
-
-
 
  ### HOME
 ![image] ("./src/assets/imgReadme/home-page.png)
@@ -34,7 +32,7 @@ Para colaborar en equipo usamos herramientas como :
 ![image] ("./src/assets/imgReadme/Login.png)
 
 ### CART
-![image] ("./src/assets/imgReadme/Cart-and-make-an-order.png
+![image] ("./src/assets/imgReadme/Cart-and-make-an-order.png)
 ### ORDERS 
 ![image] ("./src/assets/imgReadme/Orders-printed.png)
 ### USER PROFILE
@@ -42,7 +40,7 @@ Para colaborar en equipo usamos herramientas como :
 ### ROOT BACKEND
 ![image] ("./src/assets/imgReadme/backend.png)
 ### ROOT FRONT-END
-![image] ("./src/assets/imgReadme/frontend.png)
+![image] ("./src/assets/imgReadme/frontend.png")
 
 
 Pair Programing by [Sif Et tabaa](https://github.com/Sif03) & [Sergio Vidal](https://github.com/SergioJ-Vidal).
