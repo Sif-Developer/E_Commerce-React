@@ -5,8 +5,13 @@ import './Cart.scss';
 import { OrdersContext } from "../../Context/OrderContext/OrderState";
 
 const Cart = () => {
+  
   const { cart, clearCart } = useContext(ProductsContext);
   const {createOrder}  = useContext(OrdersContext)
+ const  createNewOrder =()=>{
+    createOrder(cart)
+    clearCart()
+  }
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -31,13 +36,17 @@ const Cart = () => {
     );
   });
 
+
+
   return (
     <div className="containerCart">
       <div className="cartDiv">
         <h2>Your cart</h2>
         {cartItem}
+        <>
+        </>
         <button onClick={() => clearCart()}>Clear cart</button>
-        <Button onClick={()=>createOrder(cart)}>Finalizar pedido</Button>
+        <Button onClick={createNewOrder}>Finalizar pedido</Button>
       </div>
     </div>
   );

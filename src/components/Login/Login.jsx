@@ -34,7 +34,7 @@ const Login = () => {
   return (
 
     <>
-      <Button type="primary" onClick={showModal}>
+      <Button  className="btnLogin" type="primary" onClick={showModal}>
         Login
       </Button>
       <Modal className="modal-form" open={open} title="Login to your user" onOk={handleOk} onCancel={handleCancel}

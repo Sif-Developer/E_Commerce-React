@@ -2,7 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "../../Context/ProductContext/ProductsState";
 import "./Products.scss";
 import undefined from "../../assets/images/undefined.jpg";
-import { Button, notification } from "antd";
+import { Button, notification} from "antd";
+import { ShoppingFilled } from "@ant-design/icons";
 
 const Products = () => {
     
@@ -45,7 +46,7 @@ const Products = () => {
 
         <span>{product.description}</span>
 
-        <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
+        <Button onClick={() => handleAddToCart(product)}>Add to Cart <ShoppingFilled /> </Button>
       </div>
     );
   });

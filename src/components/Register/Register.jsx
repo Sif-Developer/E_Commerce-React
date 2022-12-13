@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import { Button, Modal, Form, Input, Upload } from "antd";
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from "@ant-design/icons";
 import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext/UserState";
-
+import "./Register.scss";
 const Register = () => {
   const { registerUser } = useContext(UserContext);
 
@@ -34,7 +34,7 @@ const Register = () => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
+      <Button className="registerBtn" type="primary" onClick={showModal}>
         Register
       </Button>
 
@@ -85,10 +85,10 @@ const Register = () => {
               {
                 required: true,
                 message: "Please type your password!",
-                type: "text",
+                type: "password",
               },
             ]}>
-            <Input />
+            <Input type="password" />
           </Form.Item>
 
           <Form.Item
@@ -116,29 +116,28 @@ const Register = () => {
             ]}>
             <Input />
           </Form.Item>
-          
-
-          <Form.Item label="Image"
-            name="image"
+          <Form.Item
+            label="image"
+            name="Image"
             rules={[
               {
                 required: true,
-                message: "Please type your image!",
-                type: "file",
+                message: "Please upload a file!",
               },
             ]}>
             <Upload>
               <Button>
-                <UploadOutlined /> Seleccionar imagen
+                <UploadOutlined /> Select your image
               </Button>
             </Upload>
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" htmlType="submit">
+            <Button className="submitRegister" type="primary" htmlType="submit">
               Submit
             </Button>
             <Button
+              className="resetRegister"
               type="primary"
               htmlType="button"
               onClick={() => formRef.current.resetFields()}>

@@ -9,10 +9,11 @@ export const OrdersContext = createContext();
 export const OrderProvider = ({ children }) => {
   const createOrder = async (order) => {
     const token = JSON.parse(localStorage.getItem("token"));
+    const cart = JSON.parse(localStorage.getItem("cart"))
     try {
       await axios.post(
         API_URL + "/orders/createOrderProduct",
-        { products: order },
+        { Products: cart.id },
         { headers: { authorization: token } }
       );
     } catch (error) {
